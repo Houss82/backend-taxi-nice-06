@@ -10,7 +10,11 @@ var usersRouter = require("./routes/users");
 var app = express();
 const cors = require("cors");
 app.use(cors());
-connectDB();
+
+// Connexion à la base de données avec gestion d'erreur
+connectDB().catch((error) => {
+  console.error("Erreur lors de la connexion à la base de données:", error);
+});
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
