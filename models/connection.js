@@ -7,6 +7,12 @@ const connectionString =
 
 const connectDB = async () => {
   try {
+    // Vérifier si déjà connecté
+    if (mongoose.connection.readyState === 1) {
+      console.log("MongoDB déjà connecté 👍");
+      return;
+    }
+
     // Configuration optimisée pour Vercel/serverless
     await mongoose.connect(connectionString, {
       serverSelectionTimeoutMS: 30000, // 30 secondes pour Vercel

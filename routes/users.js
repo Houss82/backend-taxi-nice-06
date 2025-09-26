@@ -1,10 +1,13 @@
 var express = require("express");
 var router = express.Router();
 const User = require("../models/users");
+const connectDB = require("../models/connection");
 
 // GET - Récupérer toutes les réservations
 router.get("/", async (req, res) => {
   try {
+    // S'assurer que la connexion est établie
+    await connectDB();
     const reservations = await User.find();
     res.json(reservations);
   } catch (error) {
