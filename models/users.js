@@ -46,10 +46,15 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  typeTransport: {
+  nombreBagages: {
     type: String,
-    enum: ["ALD exonérante", "ALD non exonérante"],
     required: true,
+    default: "2",
+  },
+  nombrePassagers: {
+    type: String,
+    required: true,
+    default: "3",
   },
   commentaires: {
     type: String,
