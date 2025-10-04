@@ -49,12 +49,10 @@ const userSchema = new mongoose.Schema({
   nombreBagages: {
     type: String,
     required: true,
-    default: "2",
   },
   nombrePassagers: {
     type: String,
     required: true,
-    default: "3",
   },
   commentaires: {
     type: String,
