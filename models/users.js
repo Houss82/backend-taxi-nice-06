@@ -54,6 +54,21 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  numeroVol: {
+    type: String,
+    required: false,
+  },
+  siegeEnfant: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
+  typeVehicule: {
+    type: String,
+    enum: ["glc", "van"],
+    required: false,
+    default: "glc",
+  },
   commentaires: {
     type: String,
     required: false,
